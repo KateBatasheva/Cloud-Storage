@@ -14,7 +14,7 @@ public class ClientController {
     public ClientController() throws IOException {
         try (Socket socket = new Socket(IP_ADDRESS, Port)) {
             try (OutputStream out = new DataOutputStream(socket.getOutputStream())) {
-                try (InputStream in = new FileInputStream(getClass().getResource("testFile").getPath())) {
+                try (InputStream in = new FileInputStream(getClass().getResource("testFile").getPath())) { // тут ошибка но не понимаю почему
                     int read;
                     byte[] buffer = new byte[bufferSize];
                     while ((read = in.read(buffer)) != -1) {
